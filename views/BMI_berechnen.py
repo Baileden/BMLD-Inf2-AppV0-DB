@@ -2,7 +2,7 @@ import pandas as pd  # --- NEW CODE: add pandas to the imports ---
 import streamlit as st
 
 # Import the function to calculate the BMI
-from functions.bmi_calculator import calculate_bmi
+from functions.BMIrechner import calculate_bmi
 
 st.title('BMI Rechner')
 
