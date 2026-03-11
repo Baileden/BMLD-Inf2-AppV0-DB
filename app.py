@@ -1,10 +1,15 @@
 import streamlit as st
+import pandas as pd
+
+if 'data_df' not in st.session_state:
+    st.session_state['data_df'] = pd.DataFrame()
 
 st.set_page_config(page_title="Meine App", page_icon=":material/home:")
 
 pg_home = st.Page("views/home.py", title="Home", icon=":material/home:", default=True)
 pg_second = st.Page("views/unterseite_a.py", title="Unterseite A", icon=":material/info:")
 pg_third = st.Page("views/Berechnungen.py", title="Berechnungen", icon=":material/info:")
+pg_fourth = st.Page("views/BMI_berechnen.py", title="BMI Rechner", icon=":material/info:")
 
-pg = st.navigation([pg_home, pg_second, pg_third])
+pg = st.navigation([pg_home, pg_second, pg_third, pg_fourth])
 pg.run()
