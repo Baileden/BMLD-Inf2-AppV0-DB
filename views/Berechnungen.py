@@ -13,6 +13,26 @@ with st.form("Addieren"):
     if submitted:
         st.write("Ergebnis:", add(a, b))
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 with st.form("Subtrahieren"):
     st.write("Gib hier deine Zahlen die du subtrahieren willst ein:")
     a = st.number_input("Nummer 1", key="sub_a")
