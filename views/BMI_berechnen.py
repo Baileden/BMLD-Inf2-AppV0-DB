@@ -1,5 +1,6 @@
 import pandas as pd  # --- NEW CODE: add pandas to the imports ---
 import streamlit as st
+from utils.data_manager import DataManager
 
 # Import the function to calculate the BMI
 from functions.BMIrechner import calculate_bmi
@@ -24,6 +25,8 @@ if submitted:
 
     # --- NEW CODE to update history in session state and display it ---
     st.session_state['data_df'] = pd.concat([st.session_state['data_df'], pd.DataFrame([result])])
+    data_manager = DataManager()
+    data_manager.save_user_data(st.session_state['data_df'], 'data.csv')
         
 # --- NEW CODE to display the history table ---
 st.dataframe(st.session_state['data_df'])
