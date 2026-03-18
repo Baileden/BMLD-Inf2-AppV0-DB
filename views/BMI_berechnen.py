@@ -23,6 +23,7 @@ if submitted:
     st.write(f'Berechnet am: {result["timestamp"].strftime("%d.%m.%Y %H:%M:%S")}')
     st.write(f'Kategorie: {result["category"]}')
 
+
     # --- NEW CODE to update history in session state and display it ---
     st.session_state['data_df'] = pd.concat([st.session_state['data_df'], pd.DataFrame([result])])
     data_manager = DataManager()
